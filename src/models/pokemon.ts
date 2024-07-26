@@ -1,10 +1,10 @@
-export interface PokemonPage{
+export interface PokemonPage{ // interface pour stocker une page de Pokémons
     results: { name: string}[],
     next: string| null,
     previous: string|null,
 }
 
-export interface Pokemon{
+export interface Pokemon{ //interface pour stocker les caractéristiques du Pokémon
     name: string,
     types: {
         type: {
