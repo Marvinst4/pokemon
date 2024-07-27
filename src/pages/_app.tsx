@@ -4,6 +4,9 @@ import type { AppProps } from 'next/app'
 import { Anton } from 'next/font/google'
 import { Container } from 'react-bootstrap';
 import Head from 'next/head';
+import "@/styles/search.css";
+import Search from '@/components/search';
+
 
 const anton = Anton({ subsets: ['latin'], weight: ["400"] })
 
@@ -17,13 +20,17 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={anton.className}>
-    <main>
-      <Container className= 'py-4'>
-        <Component {...pageProps} /> 
-      </Container>
-    </main>
-  </div>
+    <div className={anton.className}>
+      <main>
+        <Container className= 'py-4'>
+          <Component {...pageProps} /> 
+        </Container>
+      </main>
+    </div>
+    <div className="searchBar">
+      <Search/>
+    </div>
+
     </>
   
   );

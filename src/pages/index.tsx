@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import * as PokemonApi from "@/network/pokemon-api"
 import { Button, Col, Row, Spinner } from "react-bootstrap";
+import Search from "@/components/search"
 
 export default function Home() {
   const router = useRouter();
