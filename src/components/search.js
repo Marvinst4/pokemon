@@ -6,7 +6,7 @@ function Search(){
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0)
+        fetch('https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0')
         .then(response => response.json())
         .then(json =>console.log(json))
     })

@@ -23,16 +23,18 @@ export default function PokemonDetailsPage(){
                 {pokemon && 
                     <>
                         <h1 className="text-center text-capitalize">{pokemon.name}</h1>
-                        <Image // affiche l'image du pokémon choisi en 400x400p  !!!!!  RESPONSIVNESS
+                        <Image // affiche l'image du pokémon choisi en 400x400p  !!!!!  
                             src={pokemon.sprites.other["official-artwork"].front_default}
                             alt={"Pokemon: "+pokemon.name}
                             width ={400}
                             height={400}
                         />
-                        <div className="d-inline-block mt-2"/*affiche les caractéristiques du Pokémon récupérées pas la fonction getPokemon*/>  
-                            <div><strong>Types:</strong> {pokemon.types.map(type => type.type.name).join(", ")}</div>
+                        <div className="d-table-row bg-info p-4 mt-2"/*affiche les caractéristiques du Pokémon récupérées pas la fonction getPokemon*/> 
+                            <div><strong>Stats:</strong> {pokemon.stats.map(stats => stats.stat.name +": "+ stats.stat.base_stat).join(",\n")}</div> 
+                            <div><strong>Types:</strong> {pokemon.types.map(type => type.type.name).join(",   ")}</div>
                             <div><strong>Height:</strong> {pokemon.height *10} cm</div>
                             <div><strong>Weight:</strong> {pokemon.weight /10} kg</div>
+                            <div><strong>Moves:</strong> {pokemon.moves.map(move => move.move.name).join(",   ")}</div>
                         </div>
                     </>
                 
